@@ -16,6 +16,11 @@
         rel="stylesheet">
 
     <style>
+        .bg {
+            min-height: 100vh;
+            background: rgba(255, 0, 85, 0.3)
+        }
+
         /*Sizes of the cards*/
         .left-card {
             min-height: 400px;
@@ -46,9 +51,9 @@
             position: relative;
             overflow: hidden;
             background-color: rgba(254, 251, 251, 0.95);
-            border: 1.5px solid rgba(207, 73, 117, 0.12);
+            border: 1.5px solid rgba(207, 73, 117, 0.55);
             border-radius: 24px;
-            box-shadow: 0 4px 20px rgba(207, 73, 117, 0.06);
+            box-shadow: 0 0 12px rgba(207, 73, 117, 0.35), 0 4px 20px rgba(207, 73, 117, 0.12);
             height: 100%;
             transition: transform 0.3s ease-in, box-shadow 0.3s ease-in, border-color 0.3s ease-in;
         }
@@ -56,7 +61,14 @@
         .bento-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 12px 30px rgba(207, 73, 117, 0.12);
-            border-color: rgba(207, 73, 117, 0.3);
+            border-color: #CF4975;
+        }
+
+        .bento-card.bento-card-static:hover {
+            transform: none;
+            box-shadow: 0 0 12px rgba(207, 73, 117, 0.35), 0 4px 20px rgba(207, 73, 117, 0.12);
+            ;
+            border-color: rgba(207, 73, 117, 0.55);
         }
 
         .bento-text {
@@ -112,112 +124,199 @@
             padding: 1.25rem;
             background: linear-gradient(to top, rgba(207, 73, 117, 0.6) 0%, transparent 55%);
         }
+
+        .bento-content {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0.75rem 1.5rem;
+        }
+
+        .bento-title-pink {
+            color: #C05C72;
+            font-size: 30px;
+        }
+
+        .bento-desc {
+            font-size: 13px;
+            color: #64555B;
+        }
+
+        .bento-chip {
+            padding: 5px 12px;
+            background-color: #fff;
+            border: 1.5px solid rgba(207, 73, 117, 0.18);
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 500;
+            color: #CF4975;
+        }
+
+        .bento-title-pink-dark {
+            color: #A63258;
+            font-size: 1.5rem;
+        }
+
+        .bento-title-pink-light {
+            color: #E25D87;
+            font-style: italic;
+        }
+
+        .bento-card-bg {
+            background-color: #FFD9DE;
+        }
+
+        .bento-center {
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .bento-card-sunset {
+            background: linear-gradient(135deg, #A63258 0%, #E25D87 30%, #FF8E72 65%, #FFB26B 100%);
+            border-color: rgba(255, 255, 255, 0.35);
+        }
+
+        .bento-diary {
+            font-family: 'Montserrat', sans-serif;
+            font-style: italic;
+            font-size: 0.95rem;
+            line-height: 1.45;
+            color: #fff;
+            margin: 0;
+            text-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
+        }
     </style>
 </head>
 
 <body>
-    <div class="container-fluid p-3">
-        <div class="row">
 
-            <!-- Left column (5/12) with nested rows -->
-            <div class="col-5">
-                <div class="row">
+    <body class="bg">
 
-                    <!-- Upper tall card -->
-                    <div class="bento-card left-card">
-                        <img class="bento-img" src="assets/images/UBox.jpg" alt="UBox">
-                        <div class="bento-overlay">
-                            <h1 class="bento-title display-4">URANOPHILE.</h1>
-                            <span class="bento-label">Skies cradle my wandering heart</span>
+        <div class="container-fluid p-3">
+            <div class="row">
+
+                <!-- Left column (5/12) with nested rows -->
+                <div class="col-5">
+                    <div class="row">
+
+                        <!-- Upper tall card -->
+                        <div class="bento-card left-card">
+                            <img class="bento-img" src="assets/images/UBox.jpg" alt="UBox">
+                            <div class="bento-overlay">
+                                <h1 class="bento-title display-4">URANOPHILE.</h1>
+                                <span class="bento-label">Skies cradle my wandering heart</span>
+                            </div>
                         </div>
-                    </div>
 
-                    <!-- Middle box -->
-                    <div class="col-12 p-1">
-                        <div class="bento-card left-card-below">
-                            <!-- Content -->
+                        <!-- Middle box -->
+                        <div class="col-12 p-1">
+                            <div class="bento-card bento-card-static bento-card-sunset left-card-below">
+                                <div class="bento-content">
+                                    <p class="bento-diary">
+                                        Every sky in this collection holds a memory, capturing quiet moments
+                                        lived beneath an ever-changing horizon. Each photograph
+                                        is my way of archiving pieces of my life written across the clouds.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
 
-                    <!--1 Bottom box -->
-                    <div class="col-6 p-1">
-                        <div class="bento-card left-card-bottom ">
-                            <img class="bento-img" src="assets/images/1BBox1.jpg" alt="1BBox1">
+                        <!--1 Bottom box -->
+                        <div class="col-6 p-1">
+                            <div class="bento-card left-card-bottom ">
+                                <img class="bento-img" src="assets/images/1BBox1.jpg" alt="1BBox1">
+                            </div>
                         </div>
-                    </div>
-                    <!--2 Bottom box -->
-                    <div class="col-6 p-1">
-                        <div class="bento-card left-card-bottom ">
-                            <img class="bento-img" src="assets/images/2BBox2.jpg" alt="2BBox2">
+                        <!--2 Bottom box -->
+                        <div class="col-6 p-1">
+                            <div class="bento-card left-card-bottom ">
+                                <img class="bento-img" src="assets/images/2BBox2.jpg" alt="2BBox2">
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Right column (7/12) -->
-            <div class="col-7">
-                <div class="row">
+                <!-- Right column (7/12) -->
+                <div class="col-7">
+                    <div class="row">
 
-                    <!-- Top horizontal card -->
-                    <div class="col-12 p-1">
-                        <div class="bento-card horizontal-card ">
-                            <!-- Content -->
+                        <!-- 1 Top horizontal card -->
+                        <div class="col-6 p-1">
+                            <div class="bento-card bento-card-static horizontal-card">
+                                <div class="bento-content">
+                                    <span class="bento-text">Web Development Project</span>
+                                    <h2 class="bento-title bento-title-pink mb-1">Bento Box Gallery</h2>
+                                </div>
+                            </div>
                         </div>
-                    </div>
 
-                    <!-- Three boxes middle -->
-                    <!-- Box 1 -->
-                    <div class="col-4 p-1 ">
-                        <div class="bento-card three-card ">
-                            <img class="bento-img" src="assets/images/MBox1.jpg" alt="MBox1">
+                        <!-- 2 Top horizontal card -->
+                        <div class="col-6 p-1">
+                            <div class="bento-card bento-card-static bento-card-bg horizontal-card ">
+                                <div class="bento-content bento-center">
+                                    <h2 class="bento-title bento-title-pink-dark">
+                                        There is always<br>
+                                        a reason to <span class="bento-title-pink-light">look up.</span>
+                                    </h2>
+                                </div>
+                            </div>
                         </div>
-                    </div>
 
-                    <!-- Box 2 -->
-                    <div class="col-4 p-1 ">
-                        <div class="bento-card three-card ">
-                            <img class="bento-img" src="assets/images/MBox2.jpg" alt="MBox2">
+                        <!-- Three boxes middle -->
+                        <!-- Box 1 -->
+                        <div class="col-4 p-1 ">
+                            <div class="bento-card three-card ">
+                                <img class="bento-img" src="assets/images/MBox1.jpg" alt="MBox1">
+                            </div>
                         </div>
-                    </div>
 
-                    <!-- Box 3 -->
-                    <div class="col-4 p-1">
-                        <div class="bento-card three-card ">
-                            <img class="bento-img" src="assets/images/MBox3.jpg" alt="MBox3">
+                        <!-- Box 2 -->
+                        <div class="col-4 p-1 ">
+                            <div class="bento-card three-card ">
+                                <img class="bento-img" src="assets/images/MBox2.jpg" alt="MBox2">
+                            </div>
                         </div>
-                    </div>
 
-                    <!-- Three boxes bottom -->
-                    <!-- Box 1 -->
-                    <div class="col-3 p-1">
-                        <div class="bento-card three-card-below ">
-                            <img class="bento-img" src="assets/images/BBox1.jpg" alt="BBox1">
+                        <!-- Box 3 -->
+                        <div class="col-4 p-1">
+                            <div class="bento-card three-card ">
+                                <img class="bento-img" src="assets/images/MBox3.jpg" alt="MBox3">
+                            </div>
                         </div>
-                    </div>
 
-                    <!-- Box 2 -->
-                    <div class="col-6 p-1">
-                        <div class="bento-card three-card-below ">
-                            <img class="bento-img" src="assets/images/BBox2.jpg" alt="BBox2">
+                        <!-- Three boxes bottom -->
+                        <!-- Box 1 -->
+                        <div class="col-3 p-1">
+                            <div class="bento-card three-card-below ">
+                                <img class="bento-img" src="assets/images/BBox1.jpg" alt="BBox1">
+                            </div>
                         </div>
-                    </div>
 
-                    <!-- Box 3 -->
-                    <div class="col-3 p-1">
-                        <div class="bento-card three-card-below ">
-                            <img class="bento-img" src="assets/images/BBox3.jpg" alt="BBox3">
+                        <!-- Box 2 -->
+                        <div class="col-6 p-1">
+                            <div class="bento-card three-card-below ">
+                                <img class="bento-img" src="assets/images/BBox2.jpg" alt="BBox2">
+                            </div>
                         </div>
-                    </div>
 
+                        <!-- Box 3 -->
+                        <div class="col-3 p-1">
+                            <div class="bento-card three-card-below ">
+                                <img class="bento-img" src="assets/images/BBox3.jpg" alt="BBox3">
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
-            </div>
 
+            </div>
         </div>
-    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
-</body>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+            crossorigin="anonymous"></script>
+    </body>
 
 </html>
