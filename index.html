@@ -11,29 +11,49 @@
     <!--Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600&family=Prata&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600&family=Prata&display=swap"
+        rel="stylesheet">
 
     <style>
         /*Sizes of the cards*/
-        .left-card         { min-height: 400px; }
-        .left-card-below   { min-height: 100px; }
-        .left-card-bottom  { min-height: 150px; }
-        .horizontal-card   { min-height: 100px; }
-        .three-card        { min-height: 290px; }
-        .three-card-below  { min-height: 260px; }
+        .left-card {
+            min-height: 400px;
+        }
+
+        .left-card-below {
+            min-height: 100px;
+        }
+
+        .left-card-bottom {
+            min-height: 150px;
+        }
+
+        .horizontal-card {
+            min-height: 100px;
+        }
+
+        .three-card {
+            min-height: 290px;
+        }
+
+        .three-card-below {
+            min-height: 260px;
+        }
 
         /*cards design & hovers*/
         .bento-card {
-            background-color: rgba(254, 251, 251, 0.95); 
+            position: relative;
+            overflow: hidden;
+            background-color: rgba(254, 251, 251, 0.95);
             border: 1.5px solid rgba(207, 73, 117, 0.12);
-            border-radius: 24px;                         
+            border-radius: 24px;
             box-shadow: 0 4px 20px rgba(207, 73, 117, 0.06);
-            padding: 1.25rem;
             height: 100%;
             transition: transform 0.3s ease-in, box-shadow 0.3s ease-in, border-color 0.3s ease-in;
         }
 
-        .bento-card-hover {
+        .bento-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 12px 30px rgba(207, 73, 117, 0.12);
             border-color: rgba(207, 73, 117, 0.3);
@@ -51,10 +71,46 @@
 
         .bento-title {
             font-family: 'Playfair Display', serif;
-            color: #C05C72;
+            color: #fff;
             font-weight: 600;
             line-height: 1.15;
             margin: 0;
+        }
+
+        .bento-label {
+            display: block;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: #fff;
+            margin-bottom: 0.4rem;
+        }
+
+        .bento-img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+
+        .bento-card:hover .bento-img {
+            transform: scale(1.06);
+        }
+
+        .bento-overlay {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 1.25rem;
+            background: linear-gradient(to top, rgba(207, 73, 117, 0.6) 0%, transparent 55%);
         }
     </style>
 </head>
@@ -68,11 +124,11 @@
                 <div class="row">
 
                     <!-- Upper tall card -->
-                    <div class="col-12 p-1">
-                        <div class="bento-card left-card">
-                            <h1 class="bento-title">URANOPHILE.</h1>
+                    <div class="bento-card left-card">
+                        <img class="bento-img" src="assets/images/UBox.jpg" alt="UBox">
+                        <div class="bento-overlay">
+                            <h1 class="bento-title display-4">URANOPHILE.</h1>
                             <span class="bento-label">Skies cradle my wandering heart</span>
-                            <img class="bento-img" src="assets/images/UBox.jpg" alt="UBox">
                         </div>
                     </div>
 
@@ -85,14 +141,14 @@
 
                     <!--1 Bottom box -->
                     <div class="col-6 p-1">
-                        <div class="bento-card left-card-bottom p-1">
-                        <img class="bento-img" src="assets/images/1BBox1.jpg" alt="1BBox1">
+                        <div class="bento-card left-card-bottom ">
+                            <img class="bento-img" src="assets/images/1BBox1.jpg" alt="1BBox1">
                         </div>
                     </div>
                     <!--2 Bottom box -->
                     <div class="col-6 p-1">
-                        <div class="bento-card left-card-bottom p-1">
-                         <img class="bento-img" src="assets/images/2BBox2.jpg" alt="2BBox2">
+                        <div class="bento-card left-card-bottom ">
+                            <img class="bento-img" src="assets/images/2BBox2.jpg" alt="2BBox2">
                         </div>
                     </div>
                 </div>
@@ -104,29 +160,29 @@
 
                     <!-- Top horizontal card -->
                     <div class="col-12 p-1">
-                        <div class="bento-card horizontal-card p-1">
+                        <div class="bento-card horizontal-card ">
                             <!-- Content -->
                         </div>
                     </div>
 
                     <!-- Three boxes middle -->
                     <!-- Box 1 -->
-                    <div class="col-4 p-1">
-                        <div class="bento-card three-card p-1">
-                         <img class="bento-img" src="assets/images/MBox1.jpg" alt="MBox1">
+                    <div class="col-4 p-1 ">
+                        <div class="bento-card three-card ">
+                            <img class="bento-img" src="assets/images/MBox1.jpg" alt="MBox1">
                         </div>
                     </div>
 
                     <!-- Box 2 -->
-                    <div class="col-4 p-1">
-                        <div class="bento-card three-card p-1">
-                         <img class="bento-img" src="assets/images/MBox2.jpg" alt="MBox2">
+                    <div class="col-4 p-1 ">
+                        <div class="bento-card three-card ">
+                            <img class="bento-img" src="assets/images/MBox2.jpg" alt="MBox2">
                         </div>
                     </div>
 
                     <!-- Box 3 -->
                     <div class="col-4 p-1">
-                        <div class="bento-card three-card p-1">
+                        <div class="bento-card three-card ">
                             <img class="bento-img" src="assets/images/MBox3.jpg" alt="MBox3">
                         </div>
                     </div>
@@ -134,21 +190,21 @@
                     <!-- Three boxes bottom -->
                     <!-- Box 1 -->
                     <div class="col-3 p-1">
-                        <div class="bento-card three-card-below p-1">
-                         <img class="bento-img" src="assets/images/BBox1.jpg" alt="BBox1">
+                        <div class="bento-card three-card-below ">
+                            <img class="bento-img" src="assets/images/BBox1.jpg" alt="BBox1">
                         </div>
                     </div>
 
                     <!-- Box 2 -->
                     <div class="col-6 p-1">
-                        <div class="bento-card three-card-below p-1">
+                        <div class="bento-card three-card-below ">
                             <img class="bento-img" src="assets/images/BBox2.jpg" alt="BBox2">
                         </div>
                     </div>
 
                     <!-- Box 3 -->
                     <div class="col-3 p-1">
-                        <div class="bento-card three-card-below p-1">
+                        <div class="bento-card three-card-below ">
                             <img class="bento-img" src="assets/images/BBox3.jpg" alt="BBox3">
                         </div>
                     </div>
