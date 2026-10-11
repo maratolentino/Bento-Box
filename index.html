@@ -187,6 +187,41 @@
             margin: 0;
             text-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
         }
+
+        .bento-caption {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+            padding: 2rem 1rem 0.75rem;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 0.95rem;
+            color: #fff;
+            text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.4) 0%, transparent 100%);
+            pointer-events: none;
+        }
+
+        .bento-date {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            z-index: 2;
+            padding: 4px 10px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            color: #fff;
+            background-color: rgba(255, 0, 140, 0.35);
+            -webkit-backdrop-filter: blur(6px);
+            backdrop-filter: blur(6px);
+            border-radius: 50px;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+            pointer-events: none;
+        }
     </style>
 </head>
 
@@ -204,6 +239,7 @@
                         <!-- Upper tall card -->
                         <div class="bento-card left-card">
                             <img class="bento-img" src="assets/images/UBox.jpg" alt="UBox">
+                            <span class="bento-date">Oct 9, 2026</span>
                             <div class="bento-overlay">
                                 <h1 class="bento-title display-4">URANOPHILE.</h1>
                                 <span class="bento-label">Skies cradle my wandering heart</span>
@@ -227,12 +263,16 @@
                         <div class="col-6 p-1">
                             <div class="bento-card left-card-bottom ">
                                 <img class="bento-img" src="assets/images/1BBox1.jpg" alt="1BBox1">
+                                <span class="bento-date">Aug 1, 2026</span>
+                                <span class="bento-caption">Sun pierces haze.</span>
                             </div>
                         </div>
                         <!--2 Bottom box -->
                         <div class="col-6 p-1">
                             <div class="bento-card left-card-bottom ">
                                 <img class="bento-img" src="assets/images/2BBox2.jpg" alt="2BBox2">
+                                <span class="bento-date">Jun 28, 2026</span>
+                                <span class="bento-caption">Moon peeks through.</span>
                             </div>
                         </div>
                     </div>
@@ -269,6 +309,8 @@
                         <div class="col-4 p-1 ">
                             <div class="bento-card three-card ">
                                 <img class="bento-img" src="assets/images/MBox1.jpg" alt="MBox1">
+                                <span class="bento-date">Jul 7, 2026</span>
+                                <span class="bento-caption">City meets twilight.</span>
                             </div>
                         </div>
 
@@ -276,6 +318,8 @@
                         <div class="col-4 p-1 ">
                             <div class="bento-card three-card ">
                                 <img class="bento-img" src="assets/images/MBox2.jpg" alt="MBox2">
+                                <span class="bento-date">Aug 1, 2026</span>
+                                <span class="bento-caption">Ocean meets heavens.</span>
                             </div>
                         </div>
 
@@ -283,6 +327,8 @@
                         <div class="col-4 p-1">
                             <div class="bento-card three-card ">
                                 <img class="bento-img" src="assets/images/MBox3.jpg" alt="MBox3">
+                                <span class="bento-date">Aug 4, 2026</span>
+                                <span class="bento-caption">Waves kiss shore.</span>
                             </div>
                         </div>
 
@@ -291,6 +337,8 @@
                         <div class="col-3 p-1">
                             <div class="bento-card three-card-below ">
                                 <img class="bento-img" src="assets/images/BBox1.jpg" alt="BBox1">
+                                <span class="bento-date">May 4, 2026</span>
+                                <span class="bento-caption">Framed by leaves.</span>
                             </div>
                         </div>
 
@@ -298,6 +346,8 @@
                         <div class="col-6 p-1">
                             <div class="bento-card three-card-below ">
                                 <img class="bento-img" src="assets/images/BBox2.jpg" alt="BBox2">
+                                <span class="bento-date">July 23, 2026</span>
+                                <span class="bento-caption">Golden hour palms.</span>
                             </div>
                         </div>
 
@@ -305,6 +355,8 @@
                         <div class="col-3 p-1">
                             <div class="bento-card three-card-below ">
                                 <img class="bento-img" src="assets/images/BBox3.jpg" alt="BBox3">
+                                <span class="bento-date">May 5, 2026</span>
+                                <span class="bento-caption">Dusk and silhouettes.</span>
                             </div>
                         </div>
 
